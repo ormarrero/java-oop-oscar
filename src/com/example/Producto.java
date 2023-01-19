@@ -9,23 +9,27 @@ public class Producto {
     private String color;
     private Integer peso;
 
-    //Falta agregar asociaciones/relaciones
-    //private Manufacturer manufacturer;
-    //private ProductCategory category;
+    // 4.1. Asociar la clase Manufacturer a Product
+    private Manufacturer manufacturer;
+    // 5.1. Asociar la enum ProductCategory a Product
+    private ProductCategory category;
 
 // 1.2. Constructores:
    // 1.2.1. Vacío:
     public Producto() { }
    // 1.2.2. Con parámetros:
-// agregar Manufacturer manufacturer, ProductCategory category en los parametros
-    public Producto(String nombre, Double precio, Integer cantidad, String color, Integer peso) {
+       // 4.1. Agregar Manufacturer manufacturer en los parametros:
+       // 5.1. Agregar ProductCategory category en los parametros:
+    public Producto(String nombre, Double precio, Integer cantidad, String color, Integer peso, Manufacturer manufacturer, ProductCategory getCategory) {
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
         this.color = color;
         this.peso = peso;
-        //this.manufacturer = manufacturer;
-        //        this.category = category;
+        // 4.1 Agregar this.manufacturer = manufacturer;:
+        this.manufacturer = manufacturer;
+        // 5.1 Agregar this.category = category;:
+        this.category = category;
     }
 
 // 1.3. Métodos getter y setter:
@@ -50,8 +54,21 @@ public class Producto {
 
     public void setPeso(Integer peso) { this.peso = peso; }
 
+    // 4.1 Agregar el método get y set de Manufacturer:
+    public Manufacturer getManufacturer() { return manufacturer; }
+
+    public void setManufacturer(Manufacturer manufacturer) { this.manufacturer = manufacturer; }
+
+    // 5.1 Agregar el método get y set de ProductCategory:
+
+    public ProductCategory getCategory() { return category; }
+
+    public void setCategory(ProductCategory category) { this.category = category; }
+
 
 // 1.4. toString: [Template:String concat(+)]
+    // 4.1 Crear de nuevo el to String con Manufacturer:
+    // 5.1 Crear de nuevo el to String con ProductCategory:
 
     @Override
     public String toString() {
@@ -61,6 +78,8 @@ public class Producto {
                 ", cantidad=" + cantidad +
                 ", color='" + color + '\'' +
                 ", peso=" + peso +
+                ", manufacturer=" + manufacturer +
+                ", category=" + category +
                 '}';
     }
 }

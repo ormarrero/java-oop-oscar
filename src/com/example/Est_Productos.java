@@ -2,7 +2,7 @@ package com.example;
 
 public class Est_Productos {
 
-    // Suma todos los productos y salta los precios que sean igual a null
+// 3.1. Suma todos los productos y salta los precios que sean igual a null:
     public double sumaPrecios(Producto[] productos) {
         double sumaPrecio = 0d;
 
@@ -13,7 +13,7 @@ public class Est_Productos {
         return sumaPrecio;
     }
 
-    // Cuenta todos los productos y salta las cantidades que sean igual a null
+// 3.1.1. Cuenta todos los productos y salta las cantidades que sean igual a null:
     public int cont(Producto[] productos) {
         int cont = 0;
 
@@ -24,7 +24,8 @@ public class Est_Productos {
         return cont;
     }
 
-    // Calcula el promedio de todos los productos y salta las cantidades y los precios que sean igual a null
+// 3.2. Calcula el promedio de todos los productos y salta las cantidades y los precios que sean igual a null:
+    // 3.2.1. Evitar contabilizar un precio si es nulo en el precio medio:
     public double promPrecio(Producto[] productos) {
 
         double PrecioTotal = this.sumaPrecios(productos);
@@ -36,7 +37,7 @@ public class Est_Productos {
         return PrecioTotal / cont;
     }
 
-    // Calcula el precio mayor de todos los productos y salta las cantidades y los precios que sean igual a null
+// 3.3. Calcula el precio mayor de todos los productos y salta las cantidades y los precios que sean igual a null:
     public double mayorPrecio(Producto[] productos) {
         double mayorPrecio = 0d;
 
@@ -49,7 +50,7 @@ public class Est_Productos {
         return mayorPrecio;
     }
 
-    // Calcula el precio menor de todos los productos y salta las cantidades y los precios que sean igual a null
+// 3.4. Calcula el precio menor de todos los productos y salta las cantidades y los precios que sean igual a null:
     public double menorPrecio(Producto[] productos) {
         double menorPrecio = this.mayorPrecio(productos);
 
@@ -64,8 +65,8 @@ public class Est_Productos {
         return menorPrecio;
     }
 
-    /* Calcula la Suma todos los productos teniendo en cuenta la cantidad de prodcuctos
-         y salta los precios que sean igual a null.     */
+/* 3.5 Calcula la Suma todos los productos teniendo en cuenta la cantidad de prodcuctos
+       y salta los precios que sean igual a null:     */
     public double sumaPrecioPorCantidad(Producto[] productos) {
         double PrecioTotal = 0d;
 
