@@ -1,44 +1,66 @@
 package com.example;
-
-import java.util.StringJoiner;
-
+// 1. Crear una clase Producto:
 public class Producto {
 
-    // 1. Atributos Encapsulados:
-    private String id_producto;
-    private String nombre_producto;
-    private double precio_producto;
+// 1.1. Atributos Encapsulados(private):
+    private String nombre;
+    private Double precio;
+    private Integer cantidad;
+    private String color;
+    private Integer peso;
 
-     // 2. Constructores:
+    //Falta agregar asociaciones/relaciones
+    //private Manufacturer manufacturer;
+    //private ProductCategory category;
 
-    public Producto() {
+// 1.2. Constructores:
+   // 1.2.1. Vacío:
+    public Producto() { }
+   // 1.2.2. Con parámetros:
+// agregar Manufacturer manufacturer, ProductCategory category en los parametros
+    public Producto(String nombre, Double precio, Integer cantidad, String color, Integer peso) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.color = color;
+        this.peso = peso;
+        //this.manufacturer = manufacturer;
+        //        this.category = category;
     }
 
-    public Producto(String id_producto, String nombre_producto, double precio_producto) {
-        this.id_producto = id_producto;
-        this.nombre_producto = nombre_producto;
-        this.precio_producto = precio_producto;
-    }
+// 1.3. Métodos getter y setter:
 
-    // Métodos getter y setter:
+    public String getNombre() { return nombre; }
 
-    public double getPrecio_producto() {
-        return precio_producto;
-    }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public void setPrecio_producto(double precio_producto) {
-        this.precio_producto = precio_producto;
-    }
+    public Double getPrecio() { return precio; }
 
-    // toString:
+    public void setPrecio(Double precio) { this.precio = precio; }
+
+    public Integer getCantidad() { return cantidad; }
+
+    public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
+
+    public String getColor() { return color; }
+
+    public void setColor(String color) { this.color = color; }
+
+    public Integer getPeso() { return peso; }
+
+    public void setPeso(Integer peso) { this.peso = peso; }
+
+
+// 1.4. toString: [Template:String concat(+)]
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", Producto.class.getSimpleName() + "[", "]")
-                .add("id_producto='" + id_producto + "'")
-                .add("nombre_producto='" + nombre_producto + "'")
-                .add("precio_producto=" + precio_producto)
-                .toString();
+        return "Producto{" +
+                "nombre='" + nombre + '\'' +
+                ", precio=" + precio +
+                ", cantidad=" + cantidad +
+                ", color='" + color + '\'' +
+                ", peso=" + peso +
+                '}';
     }
-
 }
